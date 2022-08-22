@@ -7,21 +7,21 @@
 
 
 // площадь полной поверхности куба - 6*a^2
-let result='';
-function calculateVolumeAndArea(a) {
-    if(typeof(a) !== 'number' || !Number.isInteger(a) || a<=0) {
-        result = "При вычислении произошла ошибка!";
-        return result;
-    } else {
-    const Volume = Math.pow(a, 3);
-    const Area = 6*Math.pow(a, 2);
-    result = `Объем куба: ${Volume}, площадь всей поверхности: ${Area}`;
-    return result;
-    }
-}
+// let result='';
+// function calculateVolumeAndArea(a) {
+//     if(typeof(a) !== 'number' || !Number.isInteger(a) || a<=0) {
+//         result = "При вычислении произошла ошибка!";
+//         return result;
+//     } else {
+//     const Volume = Math.pow(a, 3);
+//     const Area = 6*Math.pow(a, 2);
+//     result = `Объем куба: ${Volume}, площадь всей поверхности: ${Area}`;
+//     return result;
+//     }
+// }
 
-calculateVolumeAndArea(false);
-console.log(result);
+// calculateVolumeAndArea(false);
+// console.log(result);
 
 
 //Напишите функцию, которая будет определять номер купе по переданному ей номеру места. Наглядно:
@@ -130,4 +130,26 @@ console.log (findMaxNumber(5,6,2.5,11));
 // fib(1) => "0"
 
 // fib(0) => ''"
+let result='';
+function fib(num) {
+    if (typeof(num) !== 'number' || num <=0 || !Number.isInteger(num) ) {
+        result='';
+        return result;
+    } else if (num===1) {
+        result = '0';
+        return result;
+    } else {
+    let stepBefore=0;
+    let step=1;
+    result=`${stepBefore} ${step}`;
+    for (let i=1; i<=num-2; i++) {
+        let sum= step+stepBefore;
+        result = result+ " " +sum;
+        stepBefore=step;
+        step=sum;
+    }
+    return result;
+}
+}
 
+console.log(fib(5.5));
