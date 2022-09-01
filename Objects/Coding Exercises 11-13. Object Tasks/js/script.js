@@ -87,3 +87,61 @@ console.log([1,2,3]);
 console.dir([1,2,3]);
 
 
+
+
+
+
+
+// Задача:
+
+// У вас есть небольшой кусочек данных о торговом центре, которые записаны в объекте shoppingMallData. Они содержат массив с данными о магазинах, где указана длина и ширина помещения; высоту помещения; стоимость отопления за 1 кубический метр и бюджет на оплату отопления за месяц.
+
+// Основная задача - это написать функцию isBudgetEnough, которая буде возвращать строку. Если бюджета хватает для отопления всего объема торгового центра - выводится 'Бюджета достаточно', если нет - 'Бюджета недостаточно'.
+
+
+const shoppingMallData = {
+    shops: [
+        {
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 50000
+};
+
+function isBudgetEnough(data) {
+    let square=0;
+    let rent=0;
+    data.shops.forEach(elem => {
+        square+=elem.width*elem.length;
+    });
+    rent=square*data.height*data.moneyPer1m3;
+    if(rent>=data.budget) {
+        return "Бюджета недостаточно";
+    } else {
+        return "Бюджета достаточно";
+    }
+}
+
+isBudgetEnough(shoppingMallData);
+
+
+
+
+
+
+
